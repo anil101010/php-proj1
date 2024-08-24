@@ -22,10 +22,6 @@
 //     return $book['releaseYear'] >= 1950 && $book['releaseYear'] <= 2020;
 // });
 
-function dd($val){
-    var_dump($val);
-    die(); 
-}
 
-
+ 
 require "views/index.view.php";
