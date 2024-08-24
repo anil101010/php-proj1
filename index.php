@@ -3,19 +3,19 @@ require "functions.php";
 // dd($_SERVER);
 
 $uri=$_SERVER["REQUEST_URI"];
-var_dump( $uri);
+var_dump( parse_Url($uri)['path']);
+$path=parse_Url($uri)['path'];
 
-
-if($uri==='/php-proj1/'){
+if($path==='/'){
     require 'controllers/index.php';
 
 }
-else if($uri==='/php-proj1/contact'){
+else if($path==='/contact'){
     
-    require 'contact.php';
+    require 'controllers/contact.php';
   
 }
-else if($uri==='/php-proj1/about'){
+else if($path==='/about'){
      
     require 'controllers/about.php';
   
