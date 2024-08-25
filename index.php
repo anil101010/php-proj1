@@ -2,24 +2,14 @@
 require "functions.php";
 // dd($_SERVER);
 
-$uri=$_SERVER["REQUEST_URI"];
-var_dump( parse_Url($uri)['path']);
-$path=parse_Url($uri)['path'];
+require "router.php";
+require "Database.php";
 
-if($path==='/'){
-    require 'controllers/index.php';
 
-}
-else if($path==='/contact'){
-    
-    require 'controllers/contact.php';
-  
-}
-else if($path==='/about'){
-     
-    require 'controllers/about.php';
-  
-}
-else{
-    echo "error";
+$db=new Database();
+ 
+$posts=$db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($posts as $post){
+    echo "<li>". $post['title']. "</li>";
 }
