@@ -6,6 +6,7 @@ var_dump(  $uri );
 $routes=[
     '/'=>'controllers/index.php',
     '/contact'=>'controllers/contact.php',
+    '/notes'    => 'controllers/notes.php',
     '/about'=>'controllers/about.php'
 ];
 
