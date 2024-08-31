@@ -2,8 +2,8 @@
 require "Database.php";
 
 $db=new Database();
-$id=$_GET["id"];
-$posts=$db->query("select * from posts where id = ?" ,[$id])->fetchAll(PDO::FETCH_ASSOC);
+
+$posts=$db->query("select * from posts" )->fetchAll(PDO::FETCH_ASSOC);
 
 
 
